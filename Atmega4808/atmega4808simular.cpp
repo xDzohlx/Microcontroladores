@@ -8,6 +8,14 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <util/delay.h>
+#define PORTA0 0
+#define PORTA1 1
+#define PORTA2 2
+#define PORTA3 3
+#define PORTA4 4
+#define PORTA5 5
+#define PORTA6 6
+#define PORTA7 7
 
 int main(void)
 {
