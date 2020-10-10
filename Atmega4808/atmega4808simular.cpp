@@ -4,23 +4,22 @@
  * Created: 25/08/2020 19:59:03
  * Author : xdzohlx
  */ 
-#define F_CPU 20000000 
+#define F_CPU 20000000UL //Frecuencia del cpu 20 MHz
 #include <avr/io.h>
-#include <avr/interrupt.h>
-#include <util/delay.h>
-#define PORTA0 0
+#include <util/delay.h>//para hacer un delay, para su fucnionamiento requiere definir F_CPU
+
+#define PA2 2//pin que vamos a utilizar
 
 
 int main(void)
 {
-	PORTMUX_TCAROUTEA |= (1<<PORTMUX_TCA0_PORTA_gc);
-	//PORTA_DIR |= (1<<PORTA0);
-	PORTA_DIRSET |= (1<<PORTA0);
-
+	//inicialización
+	PORTA_DIRSET |= (1<<PA2);//dirección de entrada en este caso es de salida
     while (1){
-		PORTA_OUTSET |= (1<<PORTA0);
-		_delay_ms(1000);
-		PORTA_OUTCLR |= (1<<PORTA0);
-		_delay_ms(1000);		
+		PORTA_OUTSET |= (1<<PA2);//enciende el led pone en alto el pin PA2 del puerto PORTA
+		_delay_ms(100);//espera
+		PORTA_OUTCLR |= (1<<PA2);//Apaga
+		_delay_ms(100);//Espera
     }
 }
+
