@@ -8,17 +8,14 @@
 #include <avr/io.h>
 #include <util/delay.h>//para hacer un delay, para su fucnionamiento requiere definir F_CPU
 
-#define PA2 2//pin que vamos a utilizar
-
-
 int main(void)
 {
 	//inicialización
-	PORTA_DIRSET |= (1<<PA2);//dirección de entrada en este caso es de salida
+	PORTA.DIRSET = PINA2_bm;//dirección de entrada en este caso es de salida
     while (1){
-		PORTA_OUTSET |= (1<<PA2);//enciende el led pone en alto el pin PA2 del puerto PORTA
+		PORTA.OUTSET = PINA2_bm;//enciende el led pone en alto el pin PA2 del puerto PORTA
 		_delay_ms(100);//espera
-		PORTA_OUTCLR |= (1<<PA2);//Apaga
+		PORTA.OUTCLR = PINA2_bm;//Apaga
 		_delay_ms(100);//Espera
     }
 }
