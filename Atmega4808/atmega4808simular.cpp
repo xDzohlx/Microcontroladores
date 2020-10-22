@@ -11,11 +11,11 @@
 int main(void)
 {
 	//inicialización
-	PORTA.DIRSET = PINA2_bm;//dirección de entrada en este caso es de salida
+	PORTA.DIRSET = PIN2_bm;//dirección de entrada en este caso es de salida
     while (1){
-		PORTA.OUTSET = PINA2_bm;//enciende el led pone en alto el pin PA2 del puerto PORTA
+		PORTA.OUTSET = PIN2_bm;//enciende el led pone en alto el pin PA2 del puerto PORTA
 		_delay_ms(100);//espera
-		PORTA.OUTCLR = PINA2_bm;//Apaga
+		PORTA.OUTCLR = PIN2_bm;//Apaga
 		_delay_ms(100);//Espera
     }
 }
