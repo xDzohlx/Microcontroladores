@@ -1,0 +1,23 @@
+#define F_CPU 16000000UL //Frecuencia del cpu 20 MHz
+#include <avr/io.h>
+
+volatile uint16_t VALORADC = 0x0000;
+void setup(void){
+  //configuracion de puertos
+  PORTA.DIRSET = PIN0_bm|PIN1_bm|PIN2_bm|PIN3_bm|PIN4_bm|PIN5_bm|PIN6_bm|PIN7_bm;//dirección de entrada en este caso es de salida
+  //adc
+	ADC0.CTRLA |= ADC_RESSEL_bm|ADC_FREERUN_bm;//RESOLUCION Y MODO DE MUESTRAS CONSECUTIVAS
+	ADC0.CTRLB |= ADC_SAMPNUM_ACC8_gc;//MUESTRAS
+	ADC0.CTRLC |= ADC_REFSEL_VDDREF_gc|ADC_PRESC_DIV4_gc;//VOLTAJE DE REFERENCIA
+	ADC0.CTRLD |= ADC_INITDLY_DLY16_gc;//CONFIGURACION DEL RELOJ DEL ADC
+	ADC0.MUXPOS = 0x01;//SELECCION DE CANAL DE ADC PD1
+	ADC0.CTRLA |= ADC_ENABLE_bm;//ENCENDIDO DE ADC
+	ADC0.COMMAND |= ADC_STCONV_bm;//INICIO DE MUESTRAS
+}
+int main(void){
+	setup();
+    while (1){
+		VALORADC = ADC0.RES;
+			PORTA.OUT = VALORADC;
+    }
+}
