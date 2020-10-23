@@ -4,7 +4,7 @@
  * Created: 22/10/2020 19:59:03
  * Author : xdzohlx
  */ 
-#define F_CPU 20000000UL //Frecuencia del cpu 20 MHz
+#define F_CPU 16000000UL //Frecuencia del cpu 20 MHz
 #include <avr/io.h>
 #include <util/delay.h>//para hacer un delay, para su fucnionamiento requiere definir F_CPU
 
@@ -14,11 +14,14 @@ void setup(void){
 	TCA0.SINGLE.PER = 0x09C4;//0x5DC
 	TCA0.SINGLE.CTRLA |= 1;
 	TCA0.SINGLE.CTRLB |= TCA_SINGLE_CMP0EN_bm|TCA_SINGLE_WGMODE_SINGLESLOPE_gc; 
-	TCA0.SINGLE.CMP0 = 0x05DC;
+	TCA0.SINGLE.CMP0 = 0x9C4;
 }
 int main(void){
 	setup();
     while (1){
-	
+		for (int i=0;i<0x9C4;i++){
+			TCA0.SINGLE.CMP0 = i;
+			_delay_ms(1);
+		}
     }
 }
