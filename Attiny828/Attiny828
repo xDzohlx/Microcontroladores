@@ -1,0 +1,4 @@
+Carpeta para microcontrolador ATtiny828
+Documentación:
+https://www.microchip.com/wwwproducts/en/ATTINY828
+Me gusta este micro porque tiene canales de ADC en todos los pines e interrupciones y bastantes canales de pwm multiplexados para varios pines.
