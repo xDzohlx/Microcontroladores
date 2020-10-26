@@ -1,12 +1,13 @@
 /*
  * USART.c
  *
- * Created: 25/08/2020 19:59:03
+ * Created: 26/10/2020 19:59:03
  * Author : xdzohlx
  */ 
 #define F_CPU 20000000UL //Frecuencia del cpu 20 MHz
 #include <avr/io.h>
-void enviar(int x){
+
+int enviar(int x){
 	return 0;
 }
 void setup(void){
@@ -21,7 +22,7 @@ void setup(void){
 int main(void){
 	setup();
     while (1){
-		int dato;
+		int dato = 0;
 	enviar(dato);
     }
 }
