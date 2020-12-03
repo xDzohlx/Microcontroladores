@@ -22,17 +22,25 @@ void setup(void){
 	TCNT1 = 0x0000;//Reinicia el contador
 	sei();//Activa interrupciones globales
 }
-ISR(PCINT0_vect){//Primer vector de interrupcion, reinicio del timer y captura
-if (!(PINA & 0x01)){//checa flancos ¿
-	if (cont > 0){//Verifica inicio de la captura
-		canal[cont -1]=TCNT1;//toma captura de datos
-		//asigna datos a los canales, se pueden agregar mas canales
-    giro = canal[0];
-		accel = canal[1];
+//Interrupcion por cambio de estado para lectura
+ISR(PCINT0_vect){
+	if (!(PINA & 0x01)){//checa el cambio en el pin si es bajo
+		if (cont > 0){// lectura del canal no es necesario para decodificador
+		canal[cont -1]=TCNT1;//lectura del canal no necesario para salida decodificada
+		}
+		if (cont == 1){//flanco de subida canal 1
+			PORTA |= (1<PORTA1);
+		}
+		if (cont == 2){//flanco de bajada canal 1 y subida canal 2
+			PORTA &= ~(1<PORTA1);
+			PORTA |= (1<PORTA2);
+		}
+		if (cont == 3){//flanco de bajada canal 2
+			PORTA &= ~(1<PORTA2);
+		}
+		TCNT1 = 0x00;//reinicio del timer del canal
+		cont++;//siguiente canal
 	}
-	TCNT1 = 0x00;//se reinicia el contador
-	cont++;//Asigna al siguiente canal
-}
 }
 ISR(TIMER1_COMPA_vect){//Segundo vector de interrupcion, sincronizacion
 	cont = 0;//reinicia la posicion de los canales
