@@ -11,7 +11,11 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
+volatile static uint16_t canal[6];
+int cont = 0;
+
 void setup(void){
+	DDRA |= (1<<PORTA1)|(1<<PORTA2);//pines de salida del decodificador
 	PCICR = (1<<PCIE0);//Habilita las interrupciones por cambio de estado en este caso la 0
 	PCMSK0 |= (1<<PCINT0);//Habilita el pin 0 de la interrupcion que es el PORTA0
 	//Configuracion de timer de 16 bits para lectura de ppm con microsegundos
