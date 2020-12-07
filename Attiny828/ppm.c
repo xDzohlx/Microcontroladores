@@ -12,6 +12,8 @@
 #include <avr/interrupt.h>
 
 void setup(void){
+	PCICR = (1<<PCIE0);//Habilita las interrupciones por cambio de estado en este caso la 0
+	PCMSK0 |= (1<<PCINT0);//Habilita el pin 0 de la interrupcion que es el PORTA0
 	//Configuracion de timer de 16 bits para lectura de ppm con microsegundos
 	TCCR1B = (1<<WGM12)|(1<<CS11);//Seleccion de reloj y forma de donda en este caso sirve para captura
 	
