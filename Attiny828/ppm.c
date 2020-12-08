@@ -8,8 +8,8 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
-volatile static uint16_t canal[6];
-int cont = 0;
+volatile static uint16_t canal[6];//valor de 11 bits del canal
+int cont = 0;//contador de canal incrementa con cada pulso
 
 void setup(void){
 	DDRA |= (1<<PORTA1)|(1<<PORTA2);//pines de salida del decodificador
@@ -28,18 +28,12 @@ void setup(void){
 //Interrupcion por cambio de estado para lectura
 ISR(PCINT0_vect){
 	if (!(PINA & 0x01)){//checa el cambio en el pin si es bajo
-		if (cont > 0){// lectura del canal no es necesario para decodificador
-			canal[cont -1]=TCNT1;//lectura del canal no necesario para salida decodificada
-		}
 		if (cont == 0){//flanco de subida canal 1
 			PORTA |= (1<<PORTA1);
 		}
-		if (cont == 1){//flanco de subida canal 1
-			PORTA &= ~(1<<PORTA1);
-			PORTA |= (1<<PORTA2);
-		}
-		if (cont == 2){//flanco de bajada canal 1 y subida canal 2
-			PORTA &= ~(1<<PORTA2);
+		if (cont > 0){// lectura del canal no es necesario para decodificador
+			canal[cont -1]=TCNT1;//lectura del canal no necesario para salida decodificada
+			PORTA = (PORTA<<1);
 		}
 		TCNT1 = 0x00;//reinicio del timer del canal
 		cont++;//siguiente canal
@@ -53,4 +47,3 @@ int main(void){
 	while(1){
 	}
 }
-
