@@ -1,12 +1,9 @@
 /*
- * Controladora con ppm.c
+ * Decodificador ppm.c
  *
- * Created: 28/07/2020 19:50:39
- * Author : xDzohlx
+ * Created: 02/12/2020 21:44:54
+ * Author : Usuario
  */ 
-
-
-#define F_CPU 8000000
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
@@ -16,13 +13,13 @@ int cont = 0;
 
 void setup(void){
 	DDRA |= (1<<PORTA1)|(1<<PORTA2);//pines de salida del decodificador
-	PCICR = (1<<PCIE0);//Habilita las interrupciones por cambio de estado en este caso la 0
+	PCICR |= (1<<PCIE0);//Habilita las interrupciones por cambio de estado en este caso la 0
 	PCMSK0 |= (1<<PCINT0);//Habilita el pin 0 de la interrupcion que es el PORTA0
 	//Configuracion de timer de 16 bits para lectura de ppm con microsegundos
 	TCCR1B = (1<<WGM12)|(1<<CS11);//Seleccion de reloj y forma de donda en este caso sirve para captura
 	
 	OCR1A = 0xFA0;//valor de sincronizacion
-  //Interrupciones	
+	//Interrupciones
 	TIMSK1 = (1<<OCIE1A);//Habilita interrupciones del timer
 	
 	TCNT1 = 0x0000;//Reinicia el contador
@@ -32,17 +29,17 @@ void setup(void){
 ISR(PCINT0_vect){
 	if (!(PINA & 0x01)){//checa el cambio en el pin si es bajo
 		if (cont > 0){// lectura del canal no es necesario para decodificador
-		canal[cont -1]=TCNT1;//lectura del canal no necesario para salida decodificada
+			canal[cont -1]=TCNT1;//lectura del canal no necesario para salida decodificada
+		}
+		if (cont == 0){//flanco de subida canal 1
+			PORTA |= (1<<PORTA1);
 		}
 		if (cont == 1){//flanco de subida canal 1
-			PORTA |= (1<PORTA1);
+			PORTA &= ~(1<<PORTA1);
+			PORTA |= (1<<PORTA2);
 		}
 		if (cont == 2){//flanco de bajada canal 1 y subida canal 2
-			PORTA &= ~(1<PORTA1);
-			PORTA |= (1<PORTA2);
-		}
-		if (cont == 3){//flanco de bajada canal 2
-			PORTA &= ~(1<PORTA2);
+			PORTA &= ~(1<<PORTA2);
 		}
 		TCNT1 = 0x00;//reinicio del timer del canal
 		cont++;//siguiente canal
@@ -54,5 +51,6 @@ ISR(TIMER1_COMPA_vect){//Segundo vector de interrupcion, sincronizacion
 int main(void){
 	setup();//inizializacion
 	while(1){
-  }
-  }
+	}
+}
+
