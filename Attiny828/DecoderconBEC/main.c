@@ -13,8 +13,8 @@ int cont = 0;
 
 void setup(void){
 	DDRA |= (1<<PORTA0)|(1<<PORTA1)|(1<<PORTA2)|(1<<PORTA3)|(1<<PORTA7);//pines de salida del decodificador
-	PCICR |= (1<<PCIE2);//Habilita las interrupciones por cambio de estado en este caso la 0
-	PCMSK2 |= (1<<PCINT18);//Habilita el pin 0 de la interrupcion que es el PORTA0
+	PCICR |= (1<<PCIE2);//Habilita las interrupciones por cambio de estado en este caso la 2
+	PCMSK2 |= (1<<PCINT18);//Habilita el pin 0 de la interrupcion que es el PORTC2
 	//Configuracion de timer de 16 bits para lectura de ppm con microsegundos
 	TCCR1B = (1<<WGM12)|(1<<CS11);//Seleccion de reloj y forma de donda en este caso sirve para captura
 	
@@ -42,6 +42,8 @@ ISR(PCINT2_vect){
 }
 ISR(TIMER1_COMPA_vect){//Segundo vector de interrupcion, sincronizacion
 	cont = 0;//reinicia la posicion de los canales
+	PORTA &= ~(1<<PORTA7);//se apaga en la sincronicación si el led esta apagago es que no hay coneccción
+
 }
 int main(void){
 	setup();//inizializacion
