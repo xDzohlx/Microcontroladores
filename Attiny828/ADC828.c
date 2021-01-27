@@ -1,5 +1,5 @@
 /*
- * Bateria.c
+ * ADC828.c
  *
  * Created: 25/01/2021 20:57:45
  * Author : Usuario
