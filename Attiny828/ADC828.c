@@ -1,5 +1,5 @@
 /*
- * ADC828.c
+ * Bateria.c
  *
  * Created: 25/01/2021 20:57:45
  * Author : Usuario
@@ -10,17 +10,17 @@
 
 int main(void)
 {
-		DDRC |= (1<<PORTC6);//Pin de salida para un led
-		ADCSRB |= (1<<ADLAR);//Ajustado a la izquierda para una resolución de 8 bits
-		ADMUXA |= (1<<MUX0);// adc canal 1
-		ADCSRA |= (1<<ADEN)|(1<<ADIE)|(1<<ADPS2)|(1<<ADPS1)|(1<<ADATE);//Frecuencia de muestreo 125kH y lectura automatica
+		DDRA |= (1<<PORTA0);
+		ADCSRB |= (1<<ADLAR);//left adjust
+		ADMUXA |= (1<<MUX1)|(1<<MUX4);// adc canal 7
+		ADCSRA |= (1<<ADEN)|(1<<ADIE)|(1<<ADPS2)|(1<<ADPS1)|(1<<ADATE);//Frecuencia de muestreo 125kH:autotriger (1<<ADIE)|
 		ADCSRA |= (1<<ADSC);//comienza el muestreo
 		
     while (1) {
-    if(ADCH>189){//valor de 3.7 volts
-			PORTC &= ~(1<<PORTC6); //prende el led con un valor bajo
+    if(ADCH>230){
+		PORTA &= ~(1<<PORTA0);
 	}else{
-		PORTC |= (1<<PORTC6);	//prende el led con un valor alto
+		PORTA |= (1<<PORTA0);
 	}
     }
 }
