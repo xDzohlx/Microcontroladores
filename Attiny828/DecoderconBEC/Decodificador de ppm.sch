@@ -12215,11 +12215,9 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 </classes>
 <parts>
 <part name="U1" library="Attiny828(secuencial" deviceset="ATTINY828-AUR" device="TQFP32_9X9_MCH-M"/>
-<part name="SV1" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA03-1" device="" package3d_urn="urn:adsk.eagle:package:8339/1"/>
 <part name="SV2" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA03-1" device="" package3d_urn="urn:adsk.eagle:package:8339/1"/>
 <part name="SV3" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA03-1" device="" package3d_urn="urn:adsk.eagle:package:8339/1"/>
 <part name="SV4" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA03-1" device="" package3d_urn="urn:adsk.eagle:package:8339/1"/>
-<part name="SV5" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA03-1" device="" package3d_urn="urn:adsk.eagle:package:8339/1"/>
 <part name="LED1" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIP-LED0603" package3d_urn="urn:adsk.eagle:package:15819/3"/>
 <part name="LED2" library="led" library_urn="urn:adsk.eagle:library:259" deviceset="LED" device="CHIP-LED0603" package3d_urn="urn:adsk.eagle:package:15819/3"/>
 <part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-EU_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2"/>
@@ -12229,12 +12227,10 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="GND6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="P+2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="P+3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="P+4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
-<part name="P+5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="P+8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="TP1" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
 <part name="TP2" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
@@ -12250,8 +12246,13 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="P+7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="V+" device=""/>
 <part name="P+9" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="GND8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="TP5" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
-<part name="TP6" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
+<part name="TP5" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="TP19SQ" package3d_urn="urn:adsk.eagle:package:27978/1" value="TPTP19SQ"/>
+<part name="TP6" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="TP19SQ" package3d_urn="urn:adsk.eagle:package:27978/1" value="TPTP19SQ"/>
+<part name="TP7" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="TP19SQ" package3d_urn="urn:adsk.eagle:package:27978/1" value="TPTP19SQ"/>
+<part name="TP8" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="TP19SQ" package3d_urn="urn:adsk.eagle:package:27978/1" value="TPTP19SQ"/>
+<part name="TP9" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="TP19SQ" package3d_urn="urn:adsk.eagle:package:27978/1" value="TPTP19SQ"/>
+<part name="C3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2"/>
+<part name="GND6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -12261,10 +12262,6 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <instance part="U1" gate="A" x="27.94" y="60.96" smashed="yes">
 <attribute name="NAME" x="109.5756" y="70.0786" size="2.0828" layer="95" ratio="6" rot="SR0"/>
 <attribute name="VALUE" x="108.9406" y="67.5386" size="2.0828" layer="96" ratio="6" rot="SR0"/>
-</instance>
-<instance part="SV1" gate="G$1" x="17.78" y="53.34" smashed="yes">
-<attribute name="VALUE" x="16.51" y="45.72" size="1.778" layer="96"/>
-<attribute name="NAME" x="16.51" y="59.182" size="1.778" layer="95"/>
 </instance>
 <instance part="SV2" gate="G$1" x="-2.54" y="38.1" smashed="yes">
 <attribute name="VALUE" x="-3.81" y="30.48" size="1.778" layer="96"/>
@@ -12277,10 +12274,6 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <instance part="SV4" gate="G$1" x="2.54" y="12.7" smashed="yes">
 <attribute name="VALUE" x="1.27" y="5.08" size="1.778" layer="96"/>
 <attribute name="NAME" x="1.27" y="18.542" size="1.778" layer="95"/>
-</instance>
-<instance part="SV5" gate="G$1" x="2.54" y="0" smashed="yes">
-<attribute name="VALUE" x="1.27" y="-7.62" size="1.778" layer="96"/>
-<attribute name="NAME" x="1.27" y="5.842" size="1.778" layer="95"/>
 </instance>
 <instance part="LED1" gate="G$1" x="68.58" y="-2.54" smashed="yes">
 <attribute name="NAME" x="72.136" y="-7.112" size="1.778" layer="95" rot="R90"/>
@@ -12313,9 +12306,6 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <instance part="GND5" gate="1" x="20.32" y="5.08" smashed="yes">
 <attribute name="VALUE" x="17.78" y="2.54" size="1.778" layer="96"/>
 </instance>
-<instance part="GND6" gate="1" x="22.86" y="-7.62" smashed="yes">
-<attribute name="VALUE" x="20.32" y="-10.16" size="1.778" layer="96"/>
-</instance>
 <instance part="P+1" gate="1" x="27.94" y="68.58" smashed="yes">
 <attribute name="VALUE" x="25.4" y="63.5" size="1.778" layer="96" rot="R90"/>
 </instance>
@@ -12327,9 +12317,6 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 </instance>
 <instance part="P+4" gate="1" x="12.7" y="20.32" smashed="yes">
 <attribute name="VALUE" x="10.16" y="15.24" size="1.778" layer="96" rot="R90"/>
-</instance>
-<instance part="P+5" gate="1" x="15.24" y="7.62" smashed="yes">
-<attribute name="VALUE" x="12.7" y="2.54" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="P+8" gate="1" x="76.2" y="7.62" smashed="yes">
 <attribute name="VALUE" x="73.66" y="2.54" size="1.778" layer="96" rot="R90"/>
@@ -12390,6 +12377,25 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <attribute name="NAME" x="-107.95" y="8.89" size="1.778" layer="95" rot="R270"/>
 <attribute name="TP_SIGNAL_NAME" x="-110.49" y="6.35" size="1.778" layer="97" rot="R270"/>
 </instance>
+<instance part="TP7" gate="G$1" x="5.08" y="55.88" smashed="yes" rot="R90">
+<attribute name="NAME" x="3.81" y="54.61" size="1.778" layer="95" rot="R90"/>
+<attribute name="TP_SIGNAL_NAME" x="6.35" y="57.15" size="1.778" layer="97" rot="R90"/>
+</instance>
+<instance part="TP8" gate="G$1" x="5.08" y="53.34" smashed="yes" rot="R90">
+<attribute name="NAME" x="3.81" y="52.07" size="1.778" layer="95" rot="R90"/>
+<attribute name="TP_SIGNAL_NAME" x="6.35" y="54.61" size="1.778" layer="97" rot="R90"/>
+</instance>
+<instance part="TP9" gate="G$1" x="5.08" y="50.8" smashed="yes" rot="R90">
+<attribute name="NAME" x="3.81" y="49.53" size="1.778" layer="95" rot="R90"/>
+<attribute name="TP_SIGNAL_NAME" x="6.35" y="52.07" size="1.778" layer="97" rot="R90"/>
+</instance>
+<instance part="C3" gate="G$1" x="-40.64" y="5.08" smashed="yes" rot="R180">
+<attribute name="NAME" x="-42.164" y="4.699" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-42.164" y="9.779" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="GND6" gate="1" x="-40.64" y="-5.08" smashed="yes">
+<attribute name="VALUE" x="-43.18" y="-7.62" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -12433,15 +12439,6 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="20.32" y1="35.56" x2="30.48" y2="35.56" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$10" class="0">
-<segment>
-<pinref part="SV5" gate="G$1" pin="3"/>
-<wire x1="10.16" y1="2.54" x2="22.86" y2="2.54" width="0.1524" layer="91"/>
-<wire x1="22.86" y1="2.54" x2="22.86" y2="33.02" width="0.1524" layer="91"/>
-<pinref part="U1" gate="A" pin="(PCINT3/ADC3)_PA3"/>
-<wire x1="22.86" y1="33.02" x2="30.48" y2="33.02" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$13" class="0">
 <segment>
 <pinref part="U1" gate="A" pin="(PCINT7/ADC7)_PA7"/>
@@ -12471,19 +12468,13 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="12.7" y1="12.7" x2="10.16" y2="12.7" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="P+5" gate="1" pin="+5V"/>
-<pinref part="SV5" gate="G$1" pin="2"/>
-<wire x1="15.24" y1="5.08" x2="15.24" y2="0" width="0.1524" layer="91"/>
-<wire x1="15.24" y1="0" x2="10.16" y2="0" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="SV1" gate="G$1" pin="2"/>
 <pinref part="U1" gate="A" pin="VCC"/>
-<wire x1="25.4" y1="53.34" x2="27.94" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="P+1" gate="1" pin="+5V"/>
 <wire x1="27.94" y1="53.34" x2="30.48" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="27.94" y1="66.04" x2="27.94" y2="53.34" width="0.1524" layer="91"/>
 <junction x="27.94" y="53.34"/>
+<pinref part="TP8" gate="G$1" pin="TP"/>
+<wire x1="27.94" y1="53.34" x2="7.62" y2="53.34" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="P+8" gate="1" pin="+5V"/>
@@ -12531,19 +12522,13 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="20.32" y1="10.16" x2="20.32" y2="7.62" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="SV5" gate="G$1" pin="1"/>
-<pinref part="GND6" gate="1" pin="GND"/>
-<wire x1="10.16" y1="-2.54" x2="22.86" y2="-2.54" width="0.1524" layer="91"/>
-<wire x1="22.86" y1="-2.54" x2="22.86" y2="-5.08" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="SV1" gate="G$1" pin="1"/>
 <pinref part="U1" gate="A" pin="GND_2"/>
-<wire x1="25.4" y1="50.8" x2="27.94" y2="50.8" width="0.1524" layer="91"/>
 <pinref part="GND2" gate="1" pin="GND"/>
 <wire x1="27.94" y1="50.8" x2="30.48" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="27.94" y1="48.26" x2="27.94" y2="50.8" width="0.1524" layer="91"/>
 <junction x="27.94" y="50.8"/>
+<pinref part="TP9" gate="G$1" pin="TP"/>
+<wire x1="27.94" y1="50.8" x2="7.62" y2="50.8" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="R1" gate="G$1" pin="1"/>
@@ -12573,13 +12558,19 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <wire x1="-111.76" y1="7.62" x2="-116.84" y2="7.62" width="0.1524" layer="91"/>
 <junction x="-116.84" y="7.62"/>
 </segment>
+<segment>
+<pinref part="C3" gate="G$1" pin="1"/>
+<pinref part="GND6" gate="1" pin="GND"/>
+<wire x1="-40.64" y1="2.54" x2="-40.64" y2="-2.54" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="N$3" class="0">
 <segment>
 <pinref part="U1" gate="A" pin="(PCINT18/ADC18/TOCC2/RXD/INT1)_PC2"/>
 <wire x1="30.48" y1="60.96" x2="25.4" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="SV1" gate="G$1" pin="3"/>
 <wire x1="25.4" y1="60.96" x2="25.4" y2="55.88" width="0.1524" layer="91"/>
+<pinref part="TP7" gate="G$1" pin="TP"/>
+<wire x1="7.62" y1="55.88" x2="25.4" y2="55.88" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -12624,6 +12615,8 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <pinref part="TP5" gate="G$1" pin="TP"/>
 <wire x1="-38.1" y1="15.24" x2="-40.64" y2="15.24" width="0.1524" layer="91"/>
 <junction x="-40.64" y="15.24"/>
+<pinref part="C3" gate="G$1" pin="2"/>
+<wire x1="-40.64" y1="10.16" x2="-40.64" y2="15.24" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$17" class="0">
