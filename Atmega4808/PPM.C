@@ -29,13 +29,12 @@ void setup(void){
 	sei();
 }
 ISR(TCB0_INT_vect){
-
-if (cont > 0){// lectura del canal no es necesario para decodificador
+if (cont > 0)// lectura del canal no es necesario para decodificador
 	canal[cont -1]=TCB0.CCMP;//lectura del canal no necesario para salida decodificada
-}
+
 cont++;//siguiente canal
-		if (canal[cont-2]>4000)
-			cont = 0;
+if (canal[cont-2]>0xFA0)
+	cont = 0;
 }
 
 int main(void){
