@@ -12,7 +12,6 @@
 #define scl PIN3_bm//PA3 ES SCL
 #define sda PIN2_bm//PA2 ES SDA
 #define device_addr 0x27
-void send(void);
 
 void send(void){
 	TWI0.MADDR = 0x27;
