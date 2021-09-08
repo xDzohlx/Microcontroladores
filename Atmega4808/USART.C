@@ -10,8 +10,6 @@
 #define USART0_BAUD_RATE(BAUD_RATE) ((float)(F_CPU * 64 / (16 * (float)BAUD_RATE)) + 0.5)
 #include <util/delay.h>
 
-void send(uint8_t dato);
-
 void send(uint8_t dato){
 	    while (!(USART0.STATUS & USART_DREIF_bm))
 	    {
